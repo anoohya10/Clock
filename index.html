@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Clock</title>
+</head>
+    <body>
+        <div class="container">
+            <div class="tabs">
+                <button class="tab-button" onclick="showTab('alarm')">Alarm</button>
+                <button class="tab-button" onclick="showTab('stopwatch')">Stopwatch</button>
+                <button class="tab-button" onclick="showTab('timer')">Timer</button>
+            </div>
+            <!-- Alarm Tab -->
+            <div id="alarm" class="tab-content">
+                <h2>Alarm</h2>
+                <input type="time" id="alarm-time" value="07:00">
+                <br><br>
+                <i class="fa-regular fa-pen-to-square fa"
+                    style="color: #121212;font-size: 2rem;margin-left: -10px;"></i>
+                <input type="text" id="alarm-title" placeholder=" Enter Title">
+                <br><br>
+                <label>Repeat Alarm:</label>
+                <div class="days">
+                    <div class="repeat-days">
+                        <input type="checkbox" id="mon" value="Mon">Mon
+                        <input type="checkbox" id="tue" value="Tue">Tue
+                        <input type="checkbox" id="wed" value="Wed">Wed
+                        <input type="checkbox" id="thu" value="Thu">Thu
+                        <input type="checkbox" id="fri" value="Fri">Fri
+                        <input type="checkbox" id="sat" value="Sat">Sat
+                        <input type="checkbox" id="sun" value="Sun">Sun
+                    </div>
+                </div>
+                <br>
+                <label for="music">Music:</label>
+                <select id="music" name="music">
+                    <option value="default">Default</option>
+                    <option value="beep">Alarm</option>
+                    <option value="ringtone">Ringtone</option>
+                </select>
+                <br><br>
+                <button id="save-alarm" onclick="setAlarm()">Save</button>
+                <button id="cancel-alarm" onclick="cancelAlarm()">Cancel</button>
+                <br>
+                <br>
+                <div id="alarm-list">
+                    <h3>Set Alarms:</h3>
+                </div>
+            </div>
+            <!-- Stopwatch Tab -->
+            <div id="stopwatch" class="tab-content">
+                <h2>Stopwatch</h2>
+                <div id="stopwatch-display">00:00:00</div>
+                <button id="start-stopwatch">Start</button>
+                <button id="lap-stopwatch">Lap</button>
+                <button id="reset-stopwatch">Reset</button>
+                <div id="laps"></div>
+            </div>
+            <!-- Timer Tab -->
+            <div id="timer" class="tab-content">
+                <h2>Timer</h2>
+                <div class="timer-container">
+                    <svg id="progress-timer" width="200" height="200" viewBox="0 0 200 200">
+                        <circle cx="100" cy="100" r="90" stroke-width="15" stroke="#9444d6" fill="none"></circle>
+                        <circle id="progress-circle" cx="100" cy="100" r="90" stroke-width="15" stroke="#fff"
+                            fill="none" stroke-dasharray="565" stroke-dashoffset="565"></circle>
+                    </svg>
+                    <div class="timer-text">
+                        <span id="time-display">00:00</span>
+                    </div>
+                </div>
+                <br>
+                <div class="controls">
+                    <button onclick="startTimer()">Start</button>
+                    <button onclick="resetTimer()">Reset</button>
+                </div>
+            </div>
+            <audio id="default-sound" src="default.mp3" preload="auto"></audio>
+            <audio id="beep-sound" src="alarm.mp3" preload="auto"></audio>
+            <audio id="ringtone-sound" src="ringtone.mp3" preload="auto"></audio>
+        </div>
+        <script src="https://kit.fontawesome.com/b0a180b3b8.js" crossorigin="anonymous"></script>
+        <script src="alaramclock.js"></script> 
+    </body>
+</html>

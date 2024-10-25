@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+body {
+    font-family: "Source Code Pro", monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+    margin-top: -160px;
+    background: linear-gradient(30deg, rgba(113,52,171,1) 0%, rgba(180,138,215,1) 48%, rgba(124,68,194,1) 100%) repeat ;
+    
+}
+.container {
+    background-color: rgb(17 71 94 / 17%);
+    padding: 20px;
+    border: 1px solid #9444d6;
+    border-radius: 10px;
+    box-shadow: 9px 12px 4px 3px rgba(0, 0, 0, 0.1);
+    width: 500px;
+}
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;   
+}
+
+.tab-button {
+    width: 120px;
+    border-radius: 20px;
+    padding: 10px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.tab-button:hover {
+    background-color: #8629c0cf;
+    color: whitesmoke;
+    width: 200px;
+}
+.tab-content {
+    margin: 20px auto;
+    width: 300px;
+    text-align: center;
+    display: none;
+}
+.active {
+    display: block;
+} 
+h2{
+    font-size: 2rem;
+}
+#alarm-list {
+    margin-top: 20px;
+}
+.alarm-item {
+    padding: 10px;
+    border: 1px solid #fff;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 22px;
+    background: #fff;
+    font-size: 1.5rem;
+}
+.alarm-item h4 {
+    margin: 0;
+}
+.alarm-item button {
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+select#music{
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: 5px;
+}
+input[type="time"]{
+    border: 1px solid #9444d6;
+    border-radius: 12px;
+    padding: 33px;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+input[type="text"]{
+    border: 1px solid #9444d6;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 245px;
+    text-align: left;
+}
+ #alarm, #stopwatch, #timer {
+    display: none;
+} 
+.days {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+#stopwatch-display {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 40px;
+    text-align: center;
+}
+.timer-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+.timer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+}
+#progress-timer {
+    transform: rotate(-90deg);
+}
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 16px;
+    border: 1px solid #9444d6;
+}
+button:hover{
+    background-color: #8629c0cf;
+    color:white;
+}
+ label { 
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.repeat-days {
+    margin-bottom: 10px;
+}
+#laps{
+    background: #fff;
+    padding: 1px;
+    margin-top: 17px;
+    border-radius: 20px;
+    text-align: center;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
